@@ -1,9 +1,10 @@
 import NextAuth, { type NextAuthOptions } from "next-auth";
 import DiscordProvider from "next-auth/providers/discord";
 
-// Prisma adapter for NextAuth, optional and can be removed
-import { PrismaAdapter } from "@next-auth/prisma-adapter";
-import { prisma } from "../../../server/db/client";
+// EdgeDB adapter for NextAuth, optional and can be removed
+import EdgeDBAdapter from "src/utils/edgedb-adapter";
+import e from "@edgeql-js";
+import { edgedb } from "../../../server/db/client";
 import { env } from "../../../env/server.mjs";
 
 export const authOptions: NextAuthOptions = {
@@ -17,7 +18,7 @@ export const authOptions: NextAuthOptions = {
     },
   },
   // Configure one or more authentication providers
-  adapter: PrismaAdapter(prisma),
+  adapter: EdgeDBAdapter(edgedb, e),
   providers: [
     DiscordProvider({
       clientId: env.DISCORD_CLIENT_ID,

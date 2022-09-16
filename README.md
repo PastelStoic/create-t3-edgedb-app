@@ -1,6 +1,16 @@
-# Create T3 App
+# Create T3-EdgeDB App
 
-This is an app bootstrapped according to the [init.tips](https://init.tips) stack, also known as the T3-Stack. Badly modified by me to replace Prisma with EdgeDB.
+This is an app bootstrapped according to the [init.tips](https://init.tips) stack, also known as the T3-Stack. Badly modified by me.
+
+## How is this different from the normal T3 app?
+
+It's worse! Haha but really, it's exactly the same as the normal T3 app (and uses most of the same readme) but Prisma is replaced by EdgeDB. 
+
+To start developing, you'll want to install the edgedb CLI (if you haven't already) then run two commands in the project directory: `edgedb project init` and `edgedb migrate`, in that order. 
+
+To get a nice visual representation of your data (and spare you the pain of writing your own CRUD in early development) you can use `edgedb ui` to get a visual data explorer.
+
+I'll add stuff about how to configure a remote database later.
 
 ## Why are there `.js` files in here?
 
@@ -40,6 +50,8 @@ We recommend deploying to [Vercel](https://vercel.com/?utm_source=t3-oss&utm_cam
 - Now whenever you push a change to your repository, Vercel will automatically redeploy your website!
 
 ### Docker
+
+IMPORTANT: I have not yet modified the Docker parts of this branch, and it WILL NOT WORK with default values. Either make the changes yourself or use vercel.
 
 You can also dockerize this stack and deploy a container.
 

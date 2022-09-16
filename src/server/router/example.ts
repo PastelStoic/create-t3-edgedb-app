@@ -1,4 +1,5 @@
 import { createRouter } from "./context";
+import e from "@edgeql-js";
 import { z } from "zod";
 
 export const exampleRouter = createRouter()
@@ -16,6 +17,9 @@ export const exampleRouter = createRouter()
   })
   .query("getAll", {
     async resolve({ ctx }) {
-      return await ctx.prisma.example.findMany();
+      const query = e.select(e.Example, () => ({
+        message: true,
+      }));
+      return await query.run(ctx.edgedb);
     },
   });
