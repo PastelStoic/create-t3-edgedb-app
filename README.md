@@ -1,7 +1,7 @@
 # Create T3-EdgeDB App
 
 This is an app bootstrapped according to the [init.tips](https://init.tips) stack, also known as the T3-Stack. Badly modified by me.
-Additional credit to [Bruno Crosier](https://github.com/brunocrosier) for making most of [the nextauth adapter](https://gist.github.com/eropple/f6d99103cc125e74fb714642af7ffe79) for me. Still has some linting issues I promise I'll get around to.
+Additional credit to [Bruno Crosier](https://github.com/brunocrosier) for making [[the nextauth adapter](https://www.npmjs.com/package/@bruno_crosier/edgedb-adapter)](https://gist.github.com/eropple/f6d99103cc125e74fb714642af7ffe79) for me. Still has some linting issues I promise I'll get around to.
 
 ## How is this different from the normal T3 app?
 
