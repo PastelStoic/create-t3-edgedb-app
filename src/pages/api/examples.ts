@@ -3,7 +3,7 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import { edgedb } from "../../server/db/client";
 
 const examples = async (req: NextApiRequest, res: NextApiResponse) => {
-  const examples = await edgedb.query("select Example { message }"); // I could use the querybuilder for this but eh
+  const examples = await edgedb.query("select 'A message'"); // I could use the querybuilder for this but eh
   res.status(200).json(examples);
 };
 
